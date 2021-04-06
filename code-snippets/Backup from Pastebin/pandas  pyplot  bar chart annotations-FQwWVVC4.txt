@@ -1,0 +1,20 @@
+    # plot chart
+    ax = source_series.plot.barh(color='b')
+    
+    # create a list to collect the plt.patches data
+    totals = []
+
+    # find the values and append to list
+    for i in ax.patches:
+        totals.append(i.get_width())
+
+    # set individual bar lables using above list
+    total = sum(totals)
+
+    # set individual bar lables using above list
+    for i,method_name in zip(ax.patches,source_series.index):
+        # get_width pulls left or right; get_y pushes up or down
+        ax.text(i.get_width(), i.get_y()+.38, '{}/{}'.format(over_count[method_name],overall_count[method_name]), fontsize=15,color='dimgrey')
+    
+    # invert for largest on top 
+    ax.invert_yaxis()

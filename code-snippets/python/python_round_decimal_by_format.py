@@ -1,0 +1,1 @@
+print(f'{part_cnt/whole_cnt:.2%}')

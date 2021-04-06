@@ -1,0 +1,82 @@
+import matplotlib
+import matplotlib.pyplot as plt
+import seaborn as sns
+import pandas as pd
+import numpy as np
+import datetime as dt
+import json
+import random
+import sh
+from urllib.parse import urlparse
+from sklearn.metrics import roc_auc_score
+from sklearn.metrics.pairwise import cosine_similarity
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.preprocessing import normalize
+from sklearn.metrics import roc_curve, auc
+import scipy
+import networkx as nx
+import urllib
+from datetime import datetime
+import math
+import pyspark.sql
+from pyspark.sql import SparkSession
+from pyspark.sql import SQLContext
+from pyspark.sql.types import StructType, StructField, IntegerType, LongType,  StringType, DoubleType
+
+from pyspark.sql.functions import countDistinct
+from pyspark.sql.functions import col
+from pyspark.sql.functions import decode
+
+from scipy.sparse import hstack, vstack
+
+from calendar import monthrange
+import sys
+# import ../gdpr_check_toolkit
+import pickle
+sns.set()
+
+%matplotlib inline
+plt.rcParams['figure.figsize'] = [18, 8]
+
+import math
+
+def convert_size(size_bytes):
+    if size_bytes == 0:
+        return "0B"
+    size_name = ("B", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB")
+    i = int(math.floor(math.log(size_bytes, 1024)))
+    p = math.pow(1024, i)
+    s = round(size_bytes / p, 2)
+    return "%s %s" % (s, size_name[i])
+
+def save_obj(obj, name ):
+    with open('./obj/'+ name + '.pkl', 'wb') as f:
+        pickle.dump(obj, f, pickle.HIGHEST_PROTOCOL)
+
+def load_obj(name ):
+    with open('./obj/' + name + '.pkl', 'rb') as f:
+        return pickle.load(f)
+    
+from datetime import datetime as dt
+import time
+ 
+def from_millis_ts(timestamp):
+    """
+   Returns date in form of integer tuple (Y,M,D,H,S) - EXPECTING UTC TIME
+   timestamp - timestamp in seconds or milliseconds
+   """
+    # check if timestamp is in milliseconds
+    if timestamp > 9999999999:
+        timestamp = timestamp / 1e3
+    time = dt.utcfromtimestamp(timestamp)
+    return time.year,time.month,time.day,time.hour,time.minute,time.second
+ 
+def to_millis_ts(year,month,day,hour,minute,second):
+    """
+   Converts date in form of integer tuple (Y,M,D,H,S) into millis timestamp - EXPECTING UTC TIME date """
+    return int(time.mktime(dt(year,month,day,hour,minute,second).timetuple()) * 1e3)
+
+pd.options.display.float_format = '{:0.4f}'.format
+pd.set_option('display.max_columns', 12)
+pd.set_option('display.max_colwidth',100)
+pd.set_option('display.width', 1000)

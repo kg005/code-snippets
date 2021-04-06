@@ -1,0 +1,34 @@
+{
+  "notebook:collapse-selected-code": {
+    "command": "notebook:hide-cell-code",
+    "keys": [
+      "O"
+    ],
+    "selector": ".jp-Notebook:focus"
+  },    
+
+  "notebook:expand-selected-code": {
+    "command": "notebook:show-cell-code",
+    "keys": [
+      "O", 
+      "O"
+    ],
+    "selector": ".jp-Notebook:focus"
+  },
+
+  "notebook:collapse-all-code": {
+    "command": "notebook:hide-all-cell-code",
+    "keys": [
+      "Shift O"
+    ],
+    "selector": ".jp-Notebook:focus"
+  },
+
+  "notebook:show-all-code": {
+    "command": "notebook:show-all-cell-code",
+    "keys": [
+      "Shift O","Shift O"
+    ],
+    "selector": ".jp-Notebook:focus"
+  }
+}

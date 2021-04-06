@@ -1,0 +1,2 @@
+['beeline -n {user} -u jdbc:hive2://hiveserver:10000 --silent=true --hiveconf mapred.job.queue.name={queue} --outputformat={output_format} -e \"{query}\" 3>&1'.format(user=user,queue=queue,output_format=output_format,query=query)]
+["beeline -n {user} -u jdbc:hive2://hiveserver:10000 --silent=true --hiveconf mapred.job.queue.name=root.dev.backend --outputformat=vertical -e \"{query}\" 3>&1 | grep _c0 ".format(user=self.user, query=query)]

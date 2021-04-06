@@ -1,0 +1,19 @@
+Excel shortcuts
+
+change background color 	-	ALT + H + H , then arrows and enter change color
+select row 					-	Shift + Space
+delete row					-	Ctrl + -
+Copy value down 			- 	CTRL C and then 
+									ALT E S V to paste values
+									ALT E S F to paste formulas
+									ALT E S T to paste formats
+Go To Cell 					-	Ctrl + G
+Fit all columns in screen	-	Alt W G (first select all col names)
+
+Select only filtered cells  -	Ctrl G, Alt S, y, Enter
+
+Calendar
+
+next/previous week			-	Alt Down/up
+Day/Work Week/W/M etc. view	-	Ctrl Alt 1/2/3/4/5 or Alt H1 R/K/W/T
+

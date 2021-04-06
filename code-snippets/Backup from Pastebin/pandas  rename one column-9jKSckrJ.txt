@@ -1,0 +1,1 @@
+data.rename(columns={'gdp':'log(gdp)'}, inplace=True)

@@ -1,0 +1,10 @@
+Host virtualdb
+        HostName 10.100.128.74
+        IdentityFile ~/.ssh/shipmonk/id_rsa
+        User karel_gavenciak
+
+Host gitlab-personal
+        HostName gitlab.com
+        User git
+        IdentityFile /home/kg/.ssh/personal/id_rsa
+        IdentitiesOnly yes

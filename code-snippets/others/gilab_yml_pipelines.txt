@@ -1,0 +1,35 @@
+CICD 
+- autotag
+	- takes branch after merge and updates the tag
+	- the tag is full feature tag with metadata
+	- semantic versioning
+		- major - destroys backward compatibility
+		- minor - adds functions
+		- fixes - no functional changes
+
+- layering pipelines by including them
+
+
+- package
+	- variables
+	### Q ### setting of variables within the package.yml - docker host, cluster name
+	- other steps should be added 
+		- build package
+		- releasy it via pypi to our (future) repository
+
+- set project/general-settings/merge-requests
+	 - merge commit with semi-linear history - this will make sure you rebase your branch onto master before you merge it
+	 - do not allow squashing history - makes you think about the commit messages
+
+
+- when setting new projet which will be using the pipeline - 
+	- deploy key is neccessary to be set:
+		- private part in: project/settings/cicd/varaibles/KEY (and name and email)
+		- public part in: project/settings/repository/deploy-keys add public key 
+		### Q ### what are other privately/publicly accessible deploy keys?? ####
+
+
+1. create project within a gitlab group
+2. add env variables KEY (private key),NAME, EMAIL
+2. add public key project/settings/repository/deploy-keys
+3. create .gitlab.ci.yml file in the repository and add there

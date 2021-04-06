@@ -1,0 +1,7 @@
+# filter df by timestamp
+dates = ("2013-01-01",  "2015-07-01")
+date_from, date_to = [to_date(lit(s)).cast(TimestampType()) for s in dates]
+
+df.where((df.my_col > date_from) & (df.my_col < date_to))
+
+# source https://stackoverflow.com/questions/31407461/datetime-range-filter-in-pyspark-sql

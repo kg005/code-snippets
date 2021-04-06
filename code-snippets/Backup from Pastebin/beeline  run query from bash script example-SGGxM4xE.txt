@@ -1,0 +1,3 @@
+# http://dwgeek.com/hiveserver2-beeline-command-line-shell-options-examples.html/
+
+ssh brq08-004.s.jumpshot.com beeline -n gavenciak -u jdbc:hive2://hiveserver:10000 --hiveconf mapred.job.queue.name=dev.backend --outputformat=table -e \""select count(*) from userstats_v2.basic where firstseen>=1543104000000 and firstseen<1543190400000"\" 3>\&1

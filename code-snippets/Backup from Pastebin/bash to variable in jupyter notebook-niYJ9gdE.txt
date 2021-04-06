@@ -1,0 +1,7 @@
+# bash to variable in jupyter notebook:
+
+%%bash --out output --err error
+ls ../../../hdfs/prod/url-analyzer/v2-recalc-output/
+# code above stores to output variable (whole string)
+
+myvar = !ls ../../../hdfs/prod/url-analyzer/v2-recalc-output/

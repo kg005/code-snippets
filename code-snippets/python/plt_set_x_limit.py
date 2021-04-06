@@ -1,0 +1,1 @@
+plt.xlim(-0.5, len(df_enhanced_2) + 0.5);

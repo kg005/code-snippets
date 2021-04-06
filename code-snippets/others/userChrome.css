@@ -1,0 +1,59 @@
+/* put into Mozzila/Firefox/profiles/chrome/userChrome */
+
+/*@namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);*/
+
+/* Auto-hide bookmarks bar (show only on nav-bar hover)  */
+/*PersonalToolbar{
+    opacity:0 !important;
+    margin-top: -23px !important;
+    transition: all 0.4s ease 0s !important;
+}*/
+
+
+#TabsToolbar {
+/*visibility: collapse;
+height: 29px !important;  29px compact, 33px normal, YMMV 
+min-height: 29px !important;
+max-height: 29px !important;*/
+/*display:none;*/
+/*height: 10px; */
+/*!important;*/
+/*visibility: collapse !important;*/
+}
+
+#titlebar {
+/*display: none;*/
+/*height: 1px; neiher one not exactly working as there still seem to be panel min height about 30px*/
+/*min-height: 10px;*/
+
+visibility: collapse !important;
+}
+
+#titlebar {
+}
+
+#main-window[sizemode="maximized"] #nav-bar {
+  margin-top: 5px;
+}
+
+
+
+
+/* Squash tab bar to 6px unless a tab is hovered */
+/*#TabsToolbar, 
+#TabsToolbar .tabbrowser-tab {
+  height: 29px !important; 
+  min-height: 29px !important;
+  max-height: 29px !important;
+  transition: all 0.5s ease-in-out;
+} 
+#TabsToolbar:not(:hover), 
+#TabsToolbar:not(:hover) .tabbrowser-tab[selected] {
+  height: 6px !important;
+  min-height: 6px !important;
+  max-height: 6px !important;
+  transition: all 0.5s ease-in-out;
+}
+#TabsToolbar:not(:hover) .tabbrowser-tab[selected] .tab-content {
+  display: none;
+}*/

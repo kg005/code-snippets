@@ -1,0 +1,11 @@
+spark = SparkSession \
+    .builder \
+    .appName('name') \
+    .config('spark.jars', "hdfs:///user/hive/lib/jumpshot-hadoop-hive-udf_2.10_cdh5-1.16.1-hive.jar") \
+    .config("spark.yarn.queue", "root.dev.backend") \
+    .enableHiveSupport() \
+    .getOrCreate()
+
+fns = sql('show functions')
+if fns[fns['function']=='get_type'].empty:
+    sql("CREATE TEMPORARY FUNCTION get_type as 'com.jumpshot.hive.udf.GetType'")

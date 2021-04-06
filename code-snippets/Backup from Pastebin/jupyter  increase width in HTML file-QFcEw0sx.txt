@@ -1,0 +1,5 @@
+# If you don't want to change your default settings, and you only want to change the width of the current notebook you're working on, 
+# you can enter the following into a cell:
+
+from IPython.core.display import display, HTML
+display(HTML("<style>.container { width:100% !important; }</style>"))

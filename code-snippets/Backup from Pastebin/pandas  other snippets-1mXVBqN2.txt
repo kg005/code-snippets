@@ -1,0 +1,10 @@
+##### group clickstream sample by guid
+# * agg: 
+#    * get min max timestamp,
+#    * get count of unique values for columns used as keys in userstats (countrycode, browser, etc...)
+#    * get counts per eventType
+
+clickstream_by_guid = clickstream_sample.groupby(_).agg({'timestamp':[min,max,'count'],
+                                                                **{s[:-1] : pd.Series.nunique for s in STRING_COUNTER_FIELDS},
+                                                                **{e : sum for e in EVENT_TYPE_LIST if e != 'total'},
+                                                               })

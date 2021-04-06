@@ -1,0 +1,6 @@
+%%capture cap --no-stderr
+
+print('aaaa')
+
+with open('output.txt', 'w') as f:
+    f.write(cap.stdout)

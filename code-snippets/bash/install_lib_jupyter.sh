@@ -1,0 +1,1 @@
+/project/tycho/anaconda-py3/envs/py36/bin/pip install --user <package_name>

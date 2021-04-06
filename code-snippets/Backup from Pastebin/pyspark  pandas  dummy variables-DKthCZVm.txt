@@ -1,0 +1,9 @@
+# pyspark
+categories = clickstream_sample_spark_cached.select("eventType").distinct().rdd.flatMap(lambda x: x).collect()
+exprs = [when(col("eventType") == category, 1).otherwise(0).alias(category_names_dict[category]) for category in categories]
+clickstream_sample_spark_cached = clickstream_sample_spark_cached.select('*',*exprs)
+
+# source https://stackoverflow.com/questions/35879372/pyspark-matrix-with-dummy-variables
+
+# pandas
+clickstream_sample = clickstream_sample.merge(pd.get_dummies(clickstream_sample['eventType']),left_index=True,right_index=True)

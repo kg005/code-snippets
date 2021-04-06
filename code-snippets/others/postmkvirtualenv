@@ -1,0 +1,5 @@
+#!/bin/bash
+# This hook is sourced after a new virtualenv is activated.
+virtualenv_name=$(basename $VIRTUAL_ENV)
+python -m pip install ipykernel
+python -m ipykernel install --user --name=$virtualenv_name --display-name=$virtualenv_name

@@ -1,0 +1,1 @@
+df.columns = ['_'.join(col) for col in df.columns]

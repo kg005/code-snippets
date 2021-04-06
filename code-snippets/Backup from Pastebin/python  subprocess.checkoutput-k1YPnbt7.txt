@@ -1,0 +1,5 @@
+# use universal_newlines to get output as string instead of bytes
+
+def get_size(dir) -> int:
+    s_out = subprocess.check_output(['hdfs', 'dfs', '-du', '-s', dir], universal_newlines=True)
+    return int(s_out.split()[0])

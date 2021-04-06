@@ -1,0 +1,3 @@
+ls 
+	-t order by time
+	-tr order by time (most recent at bottom)

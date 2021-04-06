@@ -1,0 +1,11 @@
+#!/bin/bash
+# This hook is run before a virtualenv is deleted.
+# argument: full path to environment directory
+
+
+IFS='/' read -r -a array <<< $1
+virtualenv_name=${array[-1]}
+echo "removing jupyter virtualenv called:"
+echo  $virtualenv_name
+jupyter kernelspec uninstall $virtualenv_name -f
+

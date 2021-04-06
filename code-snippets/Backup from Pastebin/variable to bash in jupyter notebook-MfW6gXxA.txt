@@ -1,0 +1,6 @@
+# variable to bash in jupyter notebook
+all_daily_files = !ls ../../../hdfs/prod/url-analyzer/v2-recalc-output/{MY_VARIABLE}/day
+
+# or the first line of the script
+%%bash -s "$myPythonVar" "$myOtherVar"
+echo "This bash script knows about $1 and $2"

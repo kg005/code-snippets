@@ -1,0 +1,1 @@
+date.strftime('year=%Y/month=%-m/day=%-d/')

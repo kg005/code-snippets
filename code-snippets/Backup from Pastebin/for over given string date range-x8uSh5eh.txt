@@ -1,0 +1,22 @@
+date_from = '20170318'
+date_to = '20170530'
+
+indices = [0,4,6,None]
+[year_from,month_from,day_from] = [int(date_from[indices[i]:indices[i+1]]) for i in range(len(indices)-1)]
+[year_to,month_to,day_to] = [int(date_to[indices[i]:indices[i+1]]) for i in range(len(indices)-1)]
+
+for y in range(year_from,year_to +1):
+    
+    y_str = str(y)
+    
+    m_limit_start = month_from if y == year_from else 1
+    m_limit = month_to if y == year_to else 12
+
+    for m in range(m_limit_start,m_limit+1):
+        m_str=str(m).zfill(2)
+        
+        d_limit_start = day_from if y==year_from and m == month_from else 1
+        d_limit = day_to if y==year_to and m == month_to else monthrange(y,m)[1]
+
+        for d in range(d_limit_start,d_limit+1):
+            d_str = str(d).zfill(2)

@@ -1,0 +1,1 @@
+plt.savefig('file_name.png', bbox_inches='tight')

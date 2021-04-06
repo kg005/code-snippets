@@ -1,0 +1,5 @@
+You want to use chown username:groupname *, and let the shell expand the * to the contents of the current directory. This will change permissions for all files/folders in the current directory, but not the contents of the folders.
+
+You could also do chown -R username:groupname ., which would change the permissions on the current directory, and then recurse down inside of it and all subfolders to change the permissions.
+
+chown -R username:groupname * will change the permissions on all the files and folders recursively, while leaving the current directory itself alone. This style and the first style are what I find myself using most often.

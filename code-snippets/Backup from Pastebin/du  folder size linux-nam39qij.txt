@@ -1,0 +1,6 @@
+# disk usag, get folder size linux
+# -h human readable
+# -s only folder not its content separately ? 
+# --block-size=1M to get size in MegaBytes
+
+du -hs --block-size=1M path/to/folder

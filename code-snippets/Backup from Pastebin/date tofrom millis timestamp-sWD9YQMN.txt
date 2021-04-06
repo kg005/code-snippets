@@ -1,0 +1,18 @@
+from datetime import datetime as dt
+import time
+
+def from_millis_ts(timestamp):
+    """
+    Returns date in form of integer tuple (Y,M,D,H,S) - EXPECTING UTC TIME
+    timestamp - timestamp in seconds or milliseconds
+    """
+    # check if timestamp is in milliseconds
+    if timestamp > 9999999999:
+        timestamp = timestamp / 1e3
+    time = dt.utcfromtimestamp(timestamp)
+    return time.year,time.month,time.day,time.hour,time.minute,time.second
+
+def to_millis_ts(year,month,day,hour,minute,second):
+    """
+    Converts date in form of integer tuple (Y,M,D,H,S) into millis timestamp - EXPECTING UTC TIME date """
+    return int(time.mktime(dt(year,month,day,hour,minute,second).timetuple()) * 1e3)

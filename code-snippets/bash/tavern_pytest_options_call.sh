@@ -1,0 +1,1 @@
+ PYTHONPATH=$(pwd):$(pwd)/python_tests  pytest --tb=short -vv --tavern-beta-new-traceback -p no:logging --disable-warnings python_tests/test_server.tavern.yaml
